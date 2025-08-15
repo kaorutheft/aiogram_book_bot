@@ -11,8 +11,8 @@ from aiogram import Dispatcher, Bot
 
 
 async def main() -> None:
-    config: Config = load_config(
-        'C:\\Users\\Амир\\Desktop\\python работы\\бот книжка\\.env')
+    # впишите сюда путь папки .env
+    config: Config = load_config('сюда в ковычки')
     logger = logging.basicConfig(
         level=config.log.level, format=config.log.format
     )
@@ -21,7 +21,7 @@ async def main() -> None:
 
     logging.info('Bot is Starting...')
     logging.info('Prepare book...')
-    read('C:\\Users\\Амир\\Desktop\\python работы\\бот книжка\\book\\book.txt')
+    read('и сюда')
     logging.info('Book ready!')
 
     dp.startup.register(set_my_commands)
