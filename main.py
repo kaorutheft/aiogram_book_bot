@@ -12,7 +12,7 @@ from aiogram import Dispatcher, Bot
 
 async def main() -> None:
     # впишите сюда путь папки .env
-    config: Config = load_config('сюда в ковычки')
+    config: Config = load_config('сюда в кавычки')
     logger = logging.basicConfig(
         level=config.log.level, format=config.log.format
     )
