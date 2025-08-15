@@ -1,3 +1,3 @@
-btns = [1, 2, 3, 4]
-a = [btns[i:i + 1] for i in range(len(btns))]
-print(a)
+btns = ['привет', 2, 3, 4]
+# ё
+print(btns)

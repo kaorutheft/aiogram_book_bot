@@ -67,6 +67,11 @@ async def continue_cmd(message: Message):
 
 @router.message(Command('bookmarks'))
 async def continue_cmd(message: Message):
-    inline_kb = create_bookmarks_keyboard(
-        *users[str(message.from_user.id)]['bookmarks'])
-    await message.answer(text='Список доступных закладок:', reply_markup=inline_kb)
+    if len(users[str(message.from_user.id)]['bookmarks']) == 0:
+        await message.answer('Список закладок пустой!')
+        await message.answer()
+        await message.message.delete()
+    else:
+        inline_kb = create_bookmarks_keyboard(
+            *users[str(message.from_user.id)]['bookmarks'])
+        await message.answer(text='Список доступных закладок:', reply_markup=inline_kb)
